@@ -517,23 +517,23 @@ video {
 .right-14 {
   right: 3.5rem;
 }
+.right-2 {
+  right: 0.5rem;
+}
+.right-24 {
+  right: 6rem;
+}
 .right-4 {
   right: 1rem;
 }
-.right-\[120px\] {
-  right: 120px;
+.top-0 {
+  top: 0px;
 }
-.right-\[390px\] {
-  right: 390px;
+.top-4 {
+  top: 1rem;
 }
 .top-6 {
   top: 1.5rem;
-}
-.top-9 {
-  top: 2.25rem;
-}
-.top-\[-32px\] {
-  top: -32px;
 }
 .top-\[-8px\] {
   top: -8px;
@@ -597,11 +597,11 @@ video {
 .h-\[120px\] {
   height: 120px;
 }
-.h-\[138px\] {
-  height: 138px;
-}
 .h-\[60px\] {
   height: 60px;
+}
+.h-\[90px\] {
+  height: 90px;
 }
 .min-h-0 {
   min-height: 0px;
@@ -636,14 +636,8 @@ video {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.grid-cols-\[135px_1fr\] {
-  grid-template-columns: 135px 1fr;
-}
 .grid-cols-\[95px_minmax\(0\2c 1fr\)_50px\] {
   grid-template-columns: 95px minmax(0,1fr) 50px;
-}
-.grid-cols-\[minmax\(0\2c 1fr\)_300px\] {
-  grid-template-columns: minmax(0,1fr) 300px;
 }
 .grid-cols-\[minmax\(0\2c 1fr\)_90px_28px\] {
   grid-template-columns: minmax(0,1fr) 90px 28px;
@@ -895,6 +889,9 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
+.text-\[24px\] {
+  font-size: 24px;
+}
 .font-black {
   font-weight: 900;
 }
@@ -968,7 +965,8 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box;
+  min-width: 0; }
 
 html, body {
   margin: 0;
@@ -1001,7 +999,26 @@ button, input[type="range"] {
   }
 }
 
+@media (min-width: 640px) {
+
+  .sm\:grid-cols-\[135px_1fr\] {
+    grid-template-columns: 135px 1fr;
+  }
+}
+
 @media (min-width: 768px) {
+
+  .md\:right-40 {
+    right: 10rem;
+  }
+
+  .md\:right-\[60px\] {
+    right: 60px;
+  }
+
+  .md\:h-\[120px\] {
+    height: 120px;
+  }
 
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1009,6 +1026,18 @@ button, input[type="range"] {
 }
 
 @media (min-width: 1024px) {
+
+  .lg\:right-\[120px\] {
+    right: 120px;
+  }
+
+  .lg\:right-\[390px\] {
+    right: 390px;
+  }
+
+  .lg\:h-\[138px\] {
+    height: 138px;
+  }
 
   .lg\:h-full {
     height: 100%;
@@ -1028,10 +1057,6 @@ button, input[type="range"] {
 
   .lg\:grid-rows-\[54px_px_170px_minmax\(0\2c 1fr\)\] {
     grid-template-rows: 54px px 170px minmax(0,1fr);
-  }
-
-  .lg\:grid-rows-\[54px_92px_170px_minmax\(0\2c 1fr\)\] {
-    grid-template-rows: 54px 92px 170px minmax(0,1fr);
   }
 }
 

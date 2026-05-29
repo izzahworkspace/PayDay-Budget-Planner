@@ -183,7 +183,7 @@ function Sidebar() {
       <div className="flex items-center justify-center gap-3">
         <img src="/cats/logo-cat.png" className="h-10 w-10 object-contain" alt="" />
         <div>
-          <h1 className="text-lg font-black">PawPlan</h1>
+          <h1 className="text-base font-black">PawPlan</h1>
           <p className="text-[11px] leading-tight text-[#7f6b5c]">
             Plan today, purr tomorrow.
           </p>
@@ -191,7 +191,7 @@ function Sidebar() {
       </div>
 
       <div className="mt-6 rounded-[26px] bg-white p-4">
-        <h2 className="mb-4 text-center text-lg font-black">Let&apos;s Plan!</h2>
+        <h2 className="mb-4 text-center text-base font-black">Let&apos;s Plan!</h2>
         {["Salary", "Budget Ratio", "Breakdown"].map((step, index) => (
           <div
             key={step}
@@ -246,9 +246,9 @@ function TopBar() {
 
 function Hero() {
   return (
-    <section className="relative flex items-center overflow-hidden rounded-[28px] border border-[#eadbcf] bg-[#fff6ec] px-8 shadow-sm">
+    <section className="relative flex min-w-0 items-center overflow-hidden rounded-[28px] border border-[#eadbcf] bg-[#fff6ec] px-8 shadow-sm">
       <div>
-        <h2 className="max-w-[760px] text-[30px] font-black leading-[1.05]">
+        <h2 className="max-w-[760px] text-[24px] font-black leading-[1.05]">
           Smart money starts right{" "}
           <span className="text-[#b97945]">after payday.</span>
         </h2>
@@ -258,10 +258,21 @@ function Hero() {
       </div>
       <img
         src="/cats/hero-cat.png"
-        className="absolute right-[120px] top-[-32px] h-[138px] object-contain"
-        alt=""
+        className="
+          absolute
+          right-2
+          top-0
+          h-[90px]
+          object-contain
+          md:right-[60px]
+          md:h-[120px]
+          lg:right-[120px]
+          lg:h-[138px]
+        "
       />
-      <span className="absolute right-[390px] top-9 text-lg">🧡</span>
+      <span className="absolute right-24 top-4 text-sm md:right-40 lg:right-[390px]">
+        🧡
+      </span>
       <span className="absolute right-14 top-6 text-3xl opacity-10">🐾</span>
     </section>
   );
@@ -291,7 +302,7 @@ function TopInputs({
   setPreset: (values: [number, number, number]) => void;
 }) {
   return (
-    <section className="grid grid-cols-1 gap-3 xl:grid-cols-[330px_minmax(0,1fr)]">
+    <section className="grid min-w-0 grid-cols-1 gap-3 xl:grid-cols-[330px_minmax(0,1fr)]">
       <section className="rounded-[28px] border border-[#eadbcf] bg-white p-4 shadow-sm">
         <div className="mb-3 flex items-center gap-3">
           <Badge>1</Badge>
@@ -312,7 +323,7 @@ function TopInputs({
             value={salary}
             placeholder="0"
             onChange={(event) => setSalary(event.target.value)}
-            className="min-w-0 flex-1 rounded-l-2xl px-4 py-3 text-lg font-black outline-none"
+            className="min-w-0 flex-1 rounded-l-2xl px-4 py-3 text-base font-black outline-none"
           />
           <select
             value={currency}
@@ -399,7 +410,15 @@ function TopInputs({
           </div>
         </div>
 
-        <div className="grid grid-cols-[135px_1fr] items-center rounded-3xl bg-[#fffaf4] p-3">
+        <div className="
+          grid
+          grid-cols-1
+          gap-3
+          rounded-3xl
+          bg-[#fffaf4]
+          p-3
+          sm:grid-cols-[135px_1fr]
+        ">
           <div className="relative h-[120px]">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
