@@ -970,8 +970,7 @@ video {
 
 * { box-sizing: border-box; }
 
-html,
-body {
+html, body {
   margin: 0;
   overflow-x: hidden;
 }
@@ -1019,20 +1018,12 @@ button, input[type="range"] {
     min-height: 0px;
   }
 
-  .lg\:grid-cols-\[200px_minmax\(0\2c 1fr\)\] {
-    grid-template-columns: 200px minmax(0,1fr);
-  }
-
-  .lg\:grid-rows-\[54px_92px_170px_minmax\(0\2c 1fr\)\] {
-    grid-template-rows: 54px 92px 170px minmax(0,1fr);
+  .lg\:grid-cols-\[180px_minmax\(0\2c 1fr\)\] {
+    grid-template-columns: 180px minmax(0,1fr);
   }
 
   .lg\:grid-rows-\[54px_px_170px_minmax\(0\2c 1fr\)\] {
     grid-template-rows: 54px px 170px minmax(0,1fr);
-  }
-
-  .lg\:grid-rows-\[54px_gitpx_170px_minmax\(0\2c 1fr\)\] {
-    grid-template-rows: 54px gitpx 170px minmax(0,1fr);
   }
 }
 

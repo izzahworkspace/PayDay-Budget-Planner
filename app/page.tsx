@@ -23,11 +23,9 @@ const starterGroups: BudgetGroup[] = [
     soft: "#FFF1E5",
     cat: "/cats/commitment-cat.png",
     items: [
-      { id: 1, label: "Transport", amount: 300 },
-      { id: 2, label: "Food", amount: 300 },
-      { id: 3, label: "Housing", amount: 700 },
-      { id: 4, label: "Utilities", amount: 200 },
-      { id: 5, label: "Insurance", amount: 300 },
+      { id: 1, label: "", amount: "" },
+      { id: 2, label: "", amount: "" },
+      { id: 3, label: "", amount: "" },
     ],
   },
   {
@@ -38,10 +36,9 @@ const starterGroups: BudgetGroup[] = [
     soft: "#FFF7E8",
     cat: "/cats/lifestyle-cat.png",
     items: [
-      { id: 6, label: "Shopping", amount: 200 },
-      { id: 7, label: "Cafe", amount: 150 },
-      { id: 8, label: "Dining Out", amount: 200 },
-      { id: 9, label: "Hobbies", amount: 150 },
+      { id: 4, label: "", amount: "" },
+      { id: 5, label: "", amount: "" },
+      { id: 6, label: "", amount: "" },
     ],
   },
   {
@@ -52,14 +49,15 @@ const starterGroups: BudgetGroup[] = [
     soft: "#F2F7E8",
     cat: "/cats/savings-cat.png",
     items: [
-      { id: 10, label: "Emergency", amount: 200 },
-      { id: 11, label: "Investment", amount: 100 },
+      { id: 7, label: "", amount: "" },
+      { id: 8, label: "", amount: "" },
     ],
   },
 ];
 
 export default function Home() {
-  const [salary, setSalary] = useState(3000);
+  const [salary, setSalary] = useState("");
+  const salaryValue = Number(salary || 0);
   const [currency, setCurrency] = useState("MYR");
   const [groups, setGroups] = useState<BudgetGroup[]>(starterGroups);
 
@@ -144,7 +142,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#fbf7f0] p-4 text-[#2f211a]">
-      <div className="mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-4 lg:h-full lg:grid-cols-[200px_minmax(0,1fr)]">
+      <div className="mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-4 lg:h-full lg:grid-cols-[180px_minmax(0,1fr)]">
         <Sidebar />
 
         <section className="grid gap-3 lg:min-h-0 lg:grid-rows-[54px_px_170px_minmax(0,1fr)]">
