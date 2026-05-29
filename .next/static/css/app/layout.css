@@ -603,14 +603,11 @@ video {
 .h-\[60px\] {
   height: 60px;
 }
-.h-full {
-  height: 100%;
-}
-.h-screen {
-  height: 100vh;
-}
 .min-h-0 {
   min-height: 0px;
+}
+.min-h-screen {
+  min-height: 100vh;
 }
 .w-10 {
   width: 2.5rem;
@@ -630,29 +627,17 @@ video {
 .max-w-\[760px\] {
   max-width: 760px;
 }
-.max-w-\[100px\] {
-  max-width: 100px;
-}
-.max-w-\[1200px\] {
-  max-width: 1200px;
-}
 .flex-1 {
   flex: 1 1 0%;
 }
 .shrink-0 {
   flex-shrink: 0;
 }
-.grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 .grid-cols-\[135px_1fr\] {
   grid-template-columns: 135px 1fr;
-}
-.grid-cols-\[200px_minmax\(0\2c 1fr\)\] {
-  grid-template-columns: 200px minmax(0,1fr);
-}
-.grid-cols-\[330px_minmax\(0\2c 1fr\)\] {
-  grid-template-columns: 330px minmax(0,1fr);
 }
 .grid-cols-\[95px_minmax\(0\2c 1fr\)_50px\] {
   grid-template-columns: 95px minmax(0,1fr) 50px;
@@ -666,29 +651,8 @@ video {
 .grid-rows-\[40px_1fr\] {
   grid-template-rows: 40px 1fr;
 }
-.grid-rows-\[54px_92px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 54px 92px 170px minmax(0,1fr);
-}
 .grid-rows-\[74px_28px_minmax\(0\2c 1fr\)_42px\] {
   grid-template-rows: 74px 28px minmax(0,1fr) 42px;
-}
-.grid-rows-\[48px_92px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 48px 92px 170px minmax(0,1fr);
-}
-.grid-rows-\[48px_px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 48px px 170px minmax(0,1fr);
-}
-.grid-rows-\[48px_80px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 48px 80px 170px minmax(0,1fr);
-}
-.grid-rows-\[48px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 48px 170px minmax(0,1fr);
-}
-.grid-rows-\[48px_5px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 48px 5px 170px minmax(0,1fr);
-}
-.grid-rows-\[48px_0px_170px_minmax\(0\2c 1fr\)\] {
-  grid-template-rows: 48px 0px 170px minmax(0,1fr);
 }
 .flex-col {
   flex-direction: column;
@@ -729,6 +693,9 @@ video {
 }
 .overflow-y-auto {
   overflow-y: auto;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 .rounded-2xl {
   border-radius: 1rem;
@@ -1003,9 +970,10 @@ video {
 
 * { box-sizing: border-box; }
 
-html, body {
+html,
+body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
@@ -1031,5 +999,50 @@ button, input[type="range"] {
   html, body, main {
     height: auto !important;
     overflow: visible !important;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .lg\:h-full {
+    height: 100%;
+  }
+
+  .lg\:min-h-0 {
+    min-height: 0px;
+  }
+
+  .lg\:grid-cols-\[200px_minmax\(0\2c 1fr\)\] {
+    grid-template-columns: 200px minmax(0,1fr);
+  }
+
+  .lg\:grid-rows-\[54px_92px_170px_minmax\(0\2c 1fr\)\] {
+    grid-template-rows: 54px 92px 170px minmax(0,1fr);
+  }
+
+  .lg\:grid-rows-\[54px_px_170px_minmax\(0\2c 1fr\)\] {
+    grid-template-rows: 54px px 170px minmax(0,1fr);
+  }
+
+  .lg\:grid-rows-\[54px_gitpx_170px_minmax\(0\2c 1fr\)\] {
+    grid-template-rows: 54px gitpx 170px minmax(0,1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .xl\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-\[330px_minmax\(0\2c 1fr\)\] {
+    grid-template-columns: 330px minmax(0,1fr);
   }
 }

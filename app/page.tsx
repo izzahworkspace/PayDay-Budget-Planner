@@ -143,11 +143,11 @@ export default function Home() {
   }
 
   return (
-    <main className="h-screen overflow-hidden bg-[#fbf7f0] p-4 text-[#2f211a]">
-      <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[200px_minmax(0,1fr)] gap-4">
+    <main className="min-h-screen overflow-x-hidden bg-[#fbf7f0] p-4 text-[#2f211a]">
+      <div className="mx-auto grid min-h-screen max-w-[1500px] grid-cols-1 gap-4 lg:h-full lg:grid-cols-[200px_minmax(0,1fr)]">
         <Sidebar />
 
-        <section className="grid min-h-0 grid-rows-[48px_px_170px_minmax(0,1fr)] gap-3">
+        <section className="grid gap-3 lg:min-h-0 lg:grid-rows-[54px_px_170px_minmax(0,1fr)]">
           <TopBar />
           <Hero />
           <TopInputs
@@ -268,7 +268,7 @@ function TopInputs({
   setPreset: (values: [number, number, number]) => void;
 }) {
   return (
-    <section className="grid grid-cols-[330px_minmax(0,1fr)] gap-3">
+    <section className="grid grid-cols-1 gap-3 xl:grid-cols-[330px_minmax(0,1fr)]">
       <section className="rounded-[28px] border border-[#eadbcf] bg-white p-4 shadow-sm">
         <div className="mb-3 flex items-center gap-3">
           <Badge>1</Badge>
@@ -404,7 +404,7 @@ function BreakdownSection({
         </h3>
       </div>
 
-      <div className="grid min-h-0 grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
         {groups.map((group, groupIndex) => (
           <BreakdownCard
             key={group.id}
